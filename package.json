@@ -2,6 +2,9 @@
     "name": "fastapi + vue",
     "version": "0.1.0",
     "private": true,
+    "engines": {
+      "node": "16.x"
+    },
     "scripts": {
       "heroku-prebuild": "rm -rf node_modules && cd frontend && rm -rf node_modules && cd ..",
       "start": "cd backend && ./bin/start.sh",
@@ -9,7 +12,6 @@
       "heroku-cleanup": "rm -rf node_modules && cd frontend && rm -rf node_modules && cd .."
     },
     "dependencies": {
-      "core-js": "^3.4.3"
     },
     "devDependencies": {
     },
