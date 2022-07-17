@@ -16,6 +16,9 @@
 3. Start backend locally for develop
 `cd backend && (source '.env' && bash 'bin/start.sh')`
 
+4. Swager
+`http://localhost:8080/docs`
+
 
 # Alembic migrations
 
