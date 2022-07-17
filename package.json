@@ -3,9 +3,10 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
+      "heroku-prebuild": "rm -rf node_modules && cd frontend && rm -rf node_modules && cd ..",
       "start": "cd backend && ./bin/start.sh",
       "build": "cd frontend && npm install && npm run build && cd ..",
-      "heroku-cleanup": "rm -rf node_modules"
+      "heroku-cleanup": "rm -rf node_modules && cd frontend && rm -rf node_modules && cd .."
     },
     "dependencies": {
       "core-js": "^3.4.3"
