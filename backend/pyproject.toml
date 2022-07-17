@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "bill_cast"
+version = "0.1.0"
+description = ""
+authors = ["Alexander <ninjaduckiduck@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+fastapi = {extras = ["all"], version = "^0.79.0"}
+emails = "0.6"
+SQLAlchemy = "^1.4.39"
+psycopg2-binary = "^2.9.3"
+python-jose = "^3.3.0"
+passlib = "^1.7.4"
+alembic = "^1.8.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
