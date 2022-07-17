@@ -3,8 +3,8 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-      "start": "./backend/bin/start.sh",
-      "build": "cd frontend && echo 'build' && cd ..",
+      "start": "cd backend && ./bin/start.sh",
+      "build": "cd frontend && npm install && npm run build && cd ..",
       "heroku-cleanup": "rm -rf node_modules"
     },
     "dependencies": {

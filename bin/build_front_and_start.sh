@@ -6,4 +6,4 @@ npm run build_prod
 rm -rf node_modules
 cd ..
 cd backend
-./bin/start.sh
+# ./bin/start.sh
