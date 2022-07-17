@@ -6,7 +6,7 @@
       "node": "16.x"
     },
     "scripts": {
-      "serve": "vue-cli-service serve",
+      "serve": "vue-cli-service serve --port 5000",
       "build": "vue-cli-service build --dest ../dist",
       "build_stage": "vue-cli-service build --mode staging",
       "test:unit": "vue-cli-service test:unit frontend",
