@@ -43,7 +43,8 @@ class SinglePageApplication(StaticFiles):
 
 
 
-app.mount("/", SinglePageApplication(directory="../dist"), name="spa")
+if os.path.exists(settings.STATIC_FILES_PATH):
+    app.mount("/", SinglePageApplication(directory=settings.STATIC_FILES_PATH), name="spa")
 
 
 # Set all CORS enabled origins

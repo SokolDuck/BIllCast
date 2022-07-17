@@ -1,0 +1,39 @@
+version: "3.3"
+services:
+
+  db:
+    image: postgres
+    volumes:
+      - app-db-data:/var/lib/postgresql/data/pgdata
+    env_file:
+      - ./backend/.env.pg
+    ports:
+      - 5433:5432
+    environment:
+      - PGDATA=/var/lib/postgresql/data/pgdata
+
+  backend:
+    depends_on:
+      - db
+    env_file:
+      - ./backend/.env
+    # command: ls -la
+    build:
+      context: ./backend
+    volumes:
+      - ./backend/bill_cast:/app/bill_cast:rw
+    ports:
+      - 8081:8080
+    
+  frontend:
+    build:
+      context: ./frontend
+    env_file:
+      - ./frontend/.env
+    volumes:
+      - ./frontend:/app:rw
+    ports:
+      - 5000:5000
+
+volumes:
+  app-db-data:
