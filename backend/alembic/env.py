@@ -35,7 +35,7 @@ def get_url():
     url = os.getenv("DATABASE_URL")
 
     if url:
-        return url
+        return url.replace('postgres://', 'postgresql://')
 
     user = os.getenv("POSTGRES_USER")
     password = os.getenv("POSTGRES_PASSWORD")
