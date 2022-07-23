@@ -9,6 +9,7 @@ from bill_cast.db.base_class import Base
 if TYPE_CHECKING:
     from .shop import Shop
     from .item import Item
+    from .user import User
 
 
 class Deal(Base):
@@ -19,8 +20,10 @@ class Deal(Base):
     price_for_item = Column(Float)
     amount = Column(Float, default=1)
     price = Column(Float)
+    user_id = Column(Integer, ForeignKey("user.id"), index=True)
 
     discount = Column(Float, default=0)
 
     shop = relationship("Shop", back_populates="deals")
     item = relationship("Item", back_populates="deals")
+    user = relationship("User", back_populates="deals")

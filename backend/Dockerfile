@@ -4,7 +4,7 @@ WORKDIR /app/
 
 RUN apt-get update && apt-get upgrade -y
 
-RUN apt install gcc libpq-dev
+RUN apt-get install gcc libpq-dev -y
 
 RUN apt-get install -y --no-install-recommends curl
 RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | POETRY_HOME=/opt/poetry python && \

@@ -20,6 +20,7 @@ class UnitUpdate(UnitBase):
 class UnitInDBBase(UnitBase):
     id: int
     name: str
+    user_id: int
 
     class Config:
         orm_mode = True

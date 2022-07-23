@@ -1,5 +1,7 @@
 from .crud_user import user
 from .crud_unit import unit
+from .crud_tax_group import tax_group
+from .crud_shop import shop
 
 # For a new basic set of CRUD operations you could just do
 
