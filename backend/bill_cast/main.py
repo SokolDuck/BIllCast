@@ -43,10 +43,6 @@ class SinglePageApplication(StaticFiles):
 
 
 
-if os.path.exists(settings.STATIC_FILES_PATH):
-    app.mount("/", SinglePageApplication(directory=settings.STATIC_FILES_PATH), name="spa")
-
-
 # Set all CORS enabled origins
 if settings.BACKEND_CORS_ORIGINS:
     app.add_middleware(
@@ -59,3 +55,6 @@ if settings.BACKEND_CORS_ORIGINS:
     )
 
 app.include_router(api_router, prefix=settings.API_V1_STR)
+
+if os.path.exists(settings.STATIC_FILES_PATH):
+    app.mount("/", SinglePageApplication(directory=settings.STATIC_FILES_PATH), name="spa")
